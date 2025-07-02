@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Balance } from './balance/balance';
+import { AddTransaction } from './add-transaction/add-transaction';
+import { List } from './list/list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, FormsModule, Balance, AddTransaction, List],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected title = 'expense-tracker';
+export class AppComponent {
+  title = 'Expense Tracker';
 }
+

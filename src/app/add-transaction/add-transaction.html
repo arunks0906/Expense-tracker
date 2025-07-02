@@ -1,1 +1,19 @@
-<p>add-transaction works!</p>
+<div style="margin: 20px 0;">
+  <h3>Add Transaction</h3>
+  <input
+    type="number"
+    placeholder="Enter ID"
+    [(ngModel)]="id"
+  />
+  <input
+    type="text"
+    placeholder="Description"
+    [(ngModel)]="description"
+  />
+  <input
+    type="number"
+    placeholder="Amount"
+    [(ngModel)]="amount"
+  />
+  <button (click)="addTransaction()">Add</button>
+</div>

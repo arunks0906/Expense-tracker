@@ -1,1 +1,13 @@
-<p>list works!</p>
+<h3>Transaction List</h3>
+
+<ul>
+  <li *ngFor="let t of transactions">
+    <span>{{ t.id }} - {{ t.description }}:</span>
+    <span
+      [style.color]="t.amount > 0 ? 'green' : 'red'"
+    >
+      ₹{{ t.amount }}
+    </span>
+    <button (click)="deleteTransaction(t.id)">❌</button>
+  </li>
+</ul>
