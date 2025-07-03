@@ -22,7 +22,7 @@ export class AddTransaction {
     if (!this.description) return;
 
     const newTransaction: Transaction = {
-      id: this.id, // use timestamp as unique id
+      id: this.id,
       description: this.description,
       amount: this.amount
     };

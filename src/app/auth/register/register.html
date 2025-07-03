@@ -1,0 +1,28 @@
+<div class="auth-container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label>Name</label>
+    <input type="text" formControlName="name" placeholder="Enter your name" />
+    <div class="error" *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+      Name is required
+    </div>
+
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="Enter your email" />
+    <div class="error" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+      Valid email is required
+    </div>
+
+    <label>Password</label>
+    <input type="password" formControlName="password" placeholder="Enter your password" />
+    <div class="error" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+      Password is required
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+
+  <p class="switch">
+    Already have an account? <a routerLink="/">Login</a>
+  </p>
+</div>
